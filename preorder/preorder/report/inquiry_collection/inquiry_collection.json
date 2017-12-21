@@ -1,0 +1,28 @@
+{
+ "add_total_row": 0, 
+ "apply_user_permissions": 1, 
+ "creation": "2017-11-01 13:40:14.440142", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "letter_head": "Kapuk", 
+ "modified": "2017-11-28 13:25:47.838216", 
+ "modified_by": "Administrator", 
+ "module": "Preorder", 
+ "name": "Inquiry Collection", 
+ "owner": "Administrator", 
+ "query": "SELECT\n inq.`name` as \"Inquiry:Link/Inquiry:100\",\n inq.customer_name as \"Customer::250\",\n inq.contact_person as \"Contact Person::200\",\n ii.item_description as \"Description\",\n inq.urgency_level as \"Urgency Level::100\",\n inq.sales as \"Sales::120\",\n (SELECT `name` FROM `tabQuotation` WHERE inquiry = inq.`name` AND docstatus = '1') as \"Quotation:Link/Quotation:100\",\n (SELECT `name` FROM `tabSales Order` WHERE inquiry = inq.`name` AND docstatus = '1') as \"Sales Order:Link/Sales Order:100\",\n dn.`name` as \"Delivery Note:Link/Delivery Note:100\"\nFROM\n `tabInquiry` inq\nLEFT JOIN\n `tabDelivery Note` dn ON inq.`name` = dn.inquiry AND dn.docstatus = '1'\nINNER JOIN\n `tabInquiry Item` ii ON inq.`name` = ii.parent\nWHERE\n inq.docstatus != '2' ", 
+ "ref_doctype": "Inquiry", 
+ "report_name": "Inquiry Collection", 
+ "report_type": "Query Report", 
+ "roles": [
+  {
+   "role": "Administrator"
+  }, 
+  {
+   "role": "All"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "add_total_row": 0, 
+ "apply_user_permissions": 1, 
+ "creation": "2017-12-14 11:56:19.258349", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "letter_head": "Kapuk", 
+ "modified": "2017-12-14 11:56:19.258349", 
+ "modified_by": "Administrator", 
+ "module": "Preorder", 
+ "name": "Invoice Check", 
+ "owner": "Administrator", 
+ "ref_doctype": "Sales Order", 
+ "report_name": "Invoice Check", 
+ "report_type": "Script Report", 
+ "roles": [
+  {
+   "role": "All"
+  }
+ ]
+}
